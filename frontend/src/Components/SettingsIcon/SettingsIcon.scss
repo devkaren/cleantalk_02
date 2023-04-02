@@ -1,0 +1,22 @@
+.settings-icon {
+  background-color: #ffffff;
+  position: fixed;
+  z-index: 9;
+  top: 90px;
+  right: 0;
+  border: 1px solid #161a925c;
+  border-right: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 5px 10px;
+  box-shadow: 0 0 6px 0 #161a925c;
+  cursor: pointer;
+
+  .text-white {
+    width: 250px;
+    position: fixed;
+    right: 55px;
+    margin-top: -37px;
+    background-color: #161a925c;
+  }
+}

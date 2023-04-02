@@ -1,0 +1,42 @@
+.user-block {
+  padding: 15px;
+  width: 655px;
+  margin: 0 auto;
+
+  .form-select {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+
+    .dropdown-container {
+      width: 250px;
+    }
+  }
+
+  .user-info-block {
+    padding: 20px 4px 0 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 360px;
+    margin: 0 auto;
+
+    &.is-loading.skeleton {
+      display: block;
+      margin: 0 auto;
+
+      p {
+        margin: 10px 0;
+      }
+    }
+
+    p {
+      margin: 5px 0;
+
+      &:first-child {
+        margin-top: 10px;
+      }
+    }
+  }
+}

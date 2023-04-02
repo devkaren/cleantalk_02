@@ -1,0 +1,138 @@
+@tailwind utilities;
+
+/*
+  Default variables
+*/
+$animation-time: 0.5s;
+$animation-delay: 0s;
+$animation-timing: linear;
+$main-color: #171392;
+
+
+/*
+  Mixins!
+*/
+
+@mixin fade-in($time: 0.5s, $delay: 0s) {
+  opacity: 0;
+  animation: fade-in $time $animation-timing $delay 1 normal forwards;
+  -moz-animation: fade-in $time $animation-timing $delay 1 normal forwards; /* Firefox */
+  -webkit-animation: fade-in $time $animation-timing $delay 1 normal forwards; /* Safari and Chrome */
+  -o-animation: fade-in $time $animation-timing $delay 1 normal forwards; /* Opera */
+}
+
+@mixin fade-out($time: 0.5s, $delay: 0s) {
+  opacity: 1;
+  animation: fade-out $time $animation-timing $delay 1 normal forwards;
+  -moz-animation: fade-out $time $animation-timing $delay 1 normal forwards; /* Firefox */
+  -webkit-animation: fade-out $time $animation-timing $delay 1 normal forwards; /* Safari and Chrome */
+  -o-animation: fade-out $time $animation-timing $delay 1 normal forwards; /* Opera */
+}
+
+.fade-in {
+  @include fade-in($animation-time, $animation-delay);
+}
+
+.fade-out {
+  @include fade-out($animation-time, $animation-delay);
+}
+
+/*
+  KeyFrames - two animations for all effects
+*/
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fade-in { /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-in { /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fade-in { /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes fade-out { /* Firefox */
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fade-out { /* Safari and Chrome */
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes fade-out { /* Opera */
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+@-moz-keyframes shine { /* Firefox */
+  to {
+    background-position-x: -200%;
+  }
+}
+
+@-webkit-keyframes shine { /* Safari and Chrome */
+  to {
+    background-position-x: -200%;
+  }
+}
+
+@-o-keyframes shine { /* Opera */
+  to {
+    background-position-x: -200%;
+  }
+}

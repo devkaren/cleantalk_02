@@ -1,0 +1,47 @@
+.speed-result-block {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #910da6;
+
+  .speed-result-content {
+    height: 30px;
+    width: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    .skeleton {
+      padding: 20px 4px 0 4px;
+
+      &.is-loading {
+        background: #ffffff;
+        opacity: .5;
+        width: 220px;
+        padding: 0;
+        margin: 0;
+
+        & > p.custom {
+          margin: 0;
+          background: linear-gradient(110deg, #ececec 8%, #ffffff 18%, #ececec 33%);
+          border-radius: 5px;
+          background-size: 200% 100%;
+          animation: .8s shine linear infinite;
+          height: 18px;
+        }
+      }
+    }
+
+    & p {
+      margin: 0;
+      color: #ffffff;
+    }
+
+    & .speed-result p {
+      width: 220px;
+      text-align: left;
+      margin-right: -3px;
+    }
+  }
+}

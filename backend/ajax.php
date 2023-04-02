@@ -1,11 +1,12 @@
 <?php
+include_once 'cache/cache.php';
 
 $start = microtime(true);
 $ajax = new AjaxRun();
 $result = $ajax->run();
 $time = microtime(true) - $start;
 
-var_dump([
+echo json_encode([
     'result' => $result,
     'time' => $time,
 ]);
@@ -15,16 +16,26 @@ class AjaxRun
 
     private $user_info;
     private $dbDelay = 1;
+    private $cacheTime = 60;
 
     function __construct()
     {
-        $this->user_info = $this->getUserInfo();
+        $cache = new Cache();
+        $cacheResponse = $cache->getResponse($this->cacheTime);
+
+        if (!empty($cacheResponse)) {
+            $this->user_info = json_decode($cacheResponse, true);
+        } else {
+            $this->user_info = $this->getUserInfo();
+
+            $cache->setResponse(json_encode($this->user_info));
+        }
     }
 
     function run()
     {
         $result = [];
-        switch ($_REQUEST['user_data']) {
+        switch ($_GET['user_data']) {
             case 'name':
                 $result = ['success' => [
                     'name' => $this->user_info['name']
